@@ -1,4 +1,4 @@
-# flutter_fiap_aula_http_mapas
+# Trabalho Final de Flutter do grupo FG's Technology
 
 A new Flutter application.
 
