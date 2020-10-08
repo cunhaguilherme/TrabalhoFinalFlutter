@@ -1,0 +1,4 @@
+#Sat Aug 29 16:04:47 BRT 2020
+base.0=/Users/guicunha/19mob-flutter/fiap_mapas_http/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
