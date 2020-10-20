@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'dart:async';
 
 import 'listTrucks.dart';
 
@@ -32,6 +34,7 @@ class Menu extends StatelessWidget {
                   'Clique aqui e verifique todos os grandprix da F1 da temporada 2020.'),
               onTap: () {
                 Navigator.pushNamed(context, "/grandprix");
+                callAlertMessage("Carregando circuitos...");
               },
             ),
             retornaDivider(),
@@ -42,6 +45,7 @@ class Menu extends StatelessWidget {
                     'Clique aqui e adicione os pilotos que desejar para a atual temporada.'),
                 onTap: () {
                   Navigator.pushNamed(context, "/pilotos");
+                  callAlertMessage("Carregando pilotos...");
                 }),
             retornaDivider(),
             ListTile(
@@ -50,6 +54,7 @@ class Menu extends StatelessWidget {
                 subtitle: Text('Clique aqui e insira os construtores .'),
                 onTap: () {
                   Navigator.pushNamed(context, "/construtores");
+                  callAlertMessage("Carregando construtores...");
                 }),
             retornaDivider(),
             ListTile(
@@ -59,6 +64,7 @@ class Menu extends StatelessWidget {
                     'Clique aqui e contemple as maiores lendas de todos os tempos da F1.'),
                 onTap: () {
                   Navigator.pushNamed(context, "/lendas");
+                  callAlertMessage("Carregando lendas...");
                 }),
           ],
         ),
@@ -75,4 +81,9 @@ class Menu extends StatelessWidget {
       endIndent: 0,
     );
   }
+}
+
+Future<Null> callAlertMessage(String msg) async {
+  var platformMethodChannel = const MethodChannel('com.test/test');
+  await platformMethodChannel.invokeMethod('showAlert', {'msg': msg});
 }
