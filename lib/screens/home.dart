@@ -17,8 +17,6 @@ class Home extends StatelessWidget {
 /// This is the stateless widget that the main application instantiates.
 class Menu extends StatelessWidget {
   Menu({Key key}) : super(key: key);
-  static const IconData emoji_events =
-      IconData(0xe6f5, fontFamily: 'MaterialIcons');
 
   @override
   Widget build(BuildContext context) {
@@ -40,8 +38,8 @@ class Menu extends StatelessWidget {
             ListTile(
                 leading: Icon(Icons.person),
                 title: Text('Pilotos'),
-                subtitle:
-                    Text('Clique aqui e confira os pilotos da temporada 2020.'),
+                subtitle: Text(
+                    'Clique aqui e adicione os pilotos que desejar para a atual temporada.'),
                 onTap: () {
                   Navigator.pushNamed(context, "/pilotos");
                 }),
@@ -49,8 +47,7 @@ class Menu extends StatelessWidget {
             ListTile(
                 leading: Icon(Icons.build),
                 title: Text('Construtores'),
-                subtitle: Text(
-                    'Clique aqui e fique sabendo quem são os pilotos que estarão competindo pelo título mundial de F1 2020.'),
+                subtitle: Text('Clique aqui e insira os construtores .'),
                 onTap: () {
                   Navigator.pushNamed(context, "/construtores");
                 }),

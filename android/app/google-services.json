@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "953076747577",
+    "firebase_url": "https://projetoflutterfgs.firebaseio.com",
+    "project_id": "projetoflutterfgs",
+    "storage_bucket": "projetoflutterfgs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:953076747577:android:77117accc8ba1066dfece8",
+        "android_client_info": {
+          "package_name": "ogliari.flutter.flutter_fiap_aula_http_mapas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "953076747577-5bmtmq9rbbfrid805el8j71j0echh8iv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBre94cWx4yvHXAqBOZLlpzuxYEOmecZHU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "953076747577-5bmtmq9rbbfrid805el8j71j0echh8iv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
