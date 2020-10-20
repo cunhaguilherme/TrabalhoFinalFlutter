@@ -36,91 +36,35 @@ class _ListItemVehicleState extends State<ListItemVehicle> {
   @override
   Widget build(BuildContext context) {
     return Slidable(
-      actionPane: SlidableDrawerActionPane(),
-      actionExtentRatio: 0.25,
-      child: InkWell(
-        child: Padding(
-          padding: EdgeInsets.all(12.0),
-          child: Row(
-            children: [
-              Expanded(
-                //expanded: obriga a widget a expandir até o espaço possível
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(widget.position.veiculo_placa.trim(),
-                        style: style27dp),
-                    Text(
-                        widget.position.condutor_nome == null
-                            ? "-"
-                            : widget.position.condutor_nome,
-                        style: style15dp),
-                    Text(
-                      placemark == null
-                          ? "Buscando endereço..."
-                          : getFormattedAddress(),
-                      style: style15dp,
-                      softWrap: false,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ],
-                ),
-              ),
-              Icon(Icons.keyboard_arrow_right)
-            ],
-          ),
-        ),
-        onTap: () {
-          Navigator.pushNamed(context, "/mapa", arguments: widget.position);
-        },
-      ),
-      actions: <Widget>[], //da esquerda pra direita
-      secondaryActions: <Widget>[
-        IconSlideAction(
-          caption: 'Comandos',
-          color: Colors.lightBlue,
-          foregroundColor: Colors.white,
-          icon: Icons.archive,
-          onTap: () {
-            showModalBottomSheet<void>(
-              context: context,
-              builder: (BuildContext context) {
-                return Container(
-                  height: 200,
-                  color: Colors.amber,
-                  child: Center(
-                    child: Column(
-                      children: <Widget>[
-                        ListView(
-                          padding: const EdgeInsets.all(8),
-                          children: <Widget>[
-                            Container(
-                              height: 50,
-                              color: Colors.amber[600],
-                              child: const Center(child: Text('Desligar')),
-                            ),
-                            Container(
-                              height: 50,
-                              color: Colors.amber[500],
-                              child: const Center(child: Text('Frear')),
-                            ),
-                            Container(
-                              height: 50,
-                              color: Colors.amber[100],
-                              child: const Center(child: Text('Buzina')),
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
+        actionPane: SlidableDrawerActionPane(),
+        actionExtentRatio: 0.25,
+        child: InkWell(
+          child: Padding(
+            padding: EdgeInsets.all(12.0),
+            child: Row(
+              children: [
+                Expanded(
+                  //expanded: obriga a widget a expandir até o espaço possível
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(widget.position.circuit.trim(), style: style27dp),
+                      Text(
+                          widget.position.name == null
+                              ? "-"
+                              : widget.position.name,
+                          style: style15dp),
+                    ],
                   ),
-                );
-              },
-            );
+                ),
+                Icon(Icons.keyboard_arrow_right)
+              ],
+            ),
+          ),
+          onTap: () {
+            Navigator.pushNamed(context, "/mapa", arguments: widget.position);
           },
-        ),
-      ], //da direita pra esquerda
-    );
+        ));
   }
 
   String getFormattedAddress() {
