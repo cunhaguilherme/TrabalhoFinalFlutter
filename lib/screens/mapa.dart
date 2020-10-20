@@ -9,7 +9,8 @@ class Mapa extends StatefulWidget {
 }
 
 class _MapaState extends State<Mapa> {
-  Map<MarkerId, Marker> markers = <MarkerId, Marker>{}; // CLASS MEMBER, MAP OF MARKS
+  Map<MarkerId, Marker> markers =
+      <MarkerId, Marker>{}; // CLASS MEMBER, MAP OF MARKS
 
   Position position;
   ListPositions listPositions;
@@ -23,7 +24,7 @@ class _MapaState extends State<Mapa> {
 
   @override
   Widget build(BuildContext context) {
-    if (ModalRoute.of(context).settings.arguments is Position){
+    if (ModalRoute.of(context).settings.arguments is Position) {
       position = ModalRoute.of(context).settings.arguments;
     } else {
       listPositions = ModalRoute.of(context).settings.arguments;
@@ -32,11 +33,12 @@ class _MapaState extends State<Mapa> {
     if (position != null) {
       _position = CameraPosition(
         target: LatLng(position.lat, position.lng),
-        zoom: 14.4746,//2 21 - todo um cálculo
+        zoom: 14.4746, //2 21 - todo um cálculo
       );
     } else {
       _position = CameraPosition(
-        target: LatLng(listPositions.positions[0].lat, listPositions.positions[0].lng),
+        target: LatLng(
+            listPositions.positions[0].lat, listPositions.positions[0].lng),
         zoom: 18.4746,
       );
     }
@@ -46,7 +48,7 @@ class _MapaState extends State<Mapa> {
         mapType: MapType.normal,
         initialCameraPosition: _position,
         onMapCreated: _onMapCreated,
-        markers: Set<Marker>.of(markers.values),//poi = point of interest
+        markers: Set<Marker>.of(markers.values), //poi = point of interest
       ),
     );
   }
@@ -54,7 +56,7 @@ class _MapaState extends State<Mapa> {
   Future<void> _onMapCreated(GoogleMapController controller) async {
     if (position != null) {
       final marker = Marker(
-        markerId: MarkerId(position.veiculo_placa),
+        markerId: MarkerId(position.circuit),
         position: LatLng(position.lat, position.lng),
       );
       markers[marker.markerId] = marker;
@@ -64,11 +66,11 @@ class _MapaState extends State<Mapa> {
         LatLng latLng = LatLng(position.lat, position.lng);
         latLngs.add(latLng);
         final marker = Marker(
-          markerId: MarkerId(position.veiculo_placa),
+          markerId: MarkerId(position.circuit),
           position: latLng,
           infoWindow: InfoWindow(
-            title: position.veiculo_placa,
-            snippet: position.condutor_nome,
+            title: position.circuit,
+            snippet: position.name,
           ),
         );
         markers[marker.markerId] = marker;
@@ -102,8 +104,4 @@ class _MapaState extends State<Mapa> {
     //southwest    = posição do canto superior direito
     return LatLngBounds(northeast: LatLng(x1, y1), southwest: LatLng(x0, y0));
   }
-
-
-
 }
-
