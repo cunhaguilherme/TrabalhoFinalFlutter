@@ -10,7 +10,6 @@ class ListTrucks extends StatefulWidget {
 }
 
 class _ListTrucksState extends State<ListTrucks> {
-
   ListPositions listPositions;
 
   @override
@@ -28,7 +27,7 @@ class _ListTrucksState extends State<ListTrucks> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Veículos"),
+        title: Text("F1 Friends - Grandprix"),
         actions: [
           IconButton(
             icon: Icon(Icons.map),
@@ -38,18 +37,17 @@ class _ListTrucksState extends State<ListTrucks> {
           ),
         ],
       ),
-      body: listPositions == null || listPositions.positions.length == 0 ?
-      LinearProgressIndicator() : ListView.separated(
-          itemBuilder: (context, index) => buildListItem(listPositions.positions[index]),
-          separatorBuilder: (context, index) => Divider(height: 1),
-          itemCount: listPositions.positions.length
-      ),
+      body: listPositions == null || listPositions.positions.length == 0
+          ? LinearProgressIndicator()
+          : ListView.separated(
+              itemBuilder: (context, index) =>
+                  buildListItem(listPositions.positions[index]),
+              separatorBuilder: (context, index) => Divider(height: 1),
+              itemCount: listPositions.positions.length),
     );
   }
 
-  Widget buildListItem(Position position){
+  Widget buildListItem(Position position) {
     return ListItemVehicle(position);
   }
-
-
 }
