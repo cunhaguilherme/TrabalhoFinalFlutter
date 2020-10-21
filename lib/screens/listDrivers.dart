@@ -51,10 +51,10 @@ class _ListDriversState extends State<ListDrivers> {
 
     driversList = List.generate(maps.length, (i) {
       return Driver(
-        id: maps[i]['id'],
-        name: maps[i]['name'],
-        nacionality: maps[i]['nacionality'],
-      );
+          id: maps[i]['id'],
+          name: maps[i]['name'],
+          nacionality: maps[i]['nacionality'],
+          age: maps[i]['age']);
     });
 
     setState(() {});
