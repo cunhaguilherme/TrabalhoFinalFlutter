@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fiap_aula_http_mapas/screens/listDrivers.dart';
 import 'package:flutter_fiap_aula_http_mapas/screens/listTrucks.dart';
+import 'package:flutter_fiap_aula_http_mapas/screens/listConstructors.dart';
 import 'package:flutter_fiap_aula_http_mapas/screens/mapa.dart';
 import 'package:flutter_fiap_aula_http_mapas/screens/home.dart';
 import 'package:flutter_fiap_aula_http_mapas/screens/addDriver.dart';
 import 'package:flutter_fiap_aula_http_mapas/screens/addConstructor.dart';
+
+
 
 void main() {
   runApp(MainScreen());
@@ -21,7 +24,7 @@ class MainScreen extends StatelessWidget {
         '/': (context) => Home(),
         '/grandprix': (context) => ListTrucks(),
         '/pilotos': (context) => ListDrivers(),
-        //'/constructor': (context) => Constructor(),
+        '/construtores': (context) => ListConstructors(),
         '/mapa': (context) => Mapa(),
       },
     );
