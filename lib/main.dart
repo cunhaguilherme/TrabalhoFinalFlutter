@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fiap_aula_http_mapas/screens/listDrivers.dart';
 import 'package:flutter_fiap_aula_http_mapas/screens/listTrucks.dart';
+import 'package:flutter_fiap_aula_http_mapas/screens/listLegends.dart';
 import 'package:flutter_fiap_aula_http_mapas/screens/listConstructors.dart';
 import 'package:flutter_fiap_aula_http_mapas/screens/mapa.dart';
 import 'package:flutter_fiap_aula_http_mapas/screens/home.dart';
@@ -24,6 +25,7 @@ class MainScreen extends StatelessWidget {
         '/': (context) => Home(),
         '/grandprix': (context) => ListTrucks(),
         '/pilotos': (context) => ListDrivers(),
+        '/lendas': (context) => ListLegends(),
         '/construtores': (context) => ListConstructors(),
         '/mapa': (context) => Mapa(),
       },
