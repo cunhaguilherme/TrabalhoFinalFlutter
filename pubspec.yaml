@@ -36,6 +36,8 @@ dependencies:
   sqflite:
   floor: ^0.14.0
   cloud_firestore: ^0.13.6
+  firebase_messaging: ^6.0.16
+  flutter_local_notifications: ^1.4.4+1
 
 dev_dependencies:
   flutter_test:
